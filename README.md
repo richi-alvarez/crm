@@ -27,7 +27,7 @@ Repositorio del Proyecto CRM
  [Mongo versión 7.0.9 ](https://www.mongodb.com/try/download/community)
 
 ## Instalación
-1. [Descarga el proyecto.](https://github.com/epayco/Plugin_ePayco_WooCommerce#versiones)
+1. [Descarga el proyecto.](https://github.com/richi-alvarez/crm/releases/tag/v1.0.0)
 2. acceder a la carpeta del proyecto cd /.
 3. acceder a la terminal de comandos y correr el comando:  
     * docker compose -f docker-compose.yml up -d --build
