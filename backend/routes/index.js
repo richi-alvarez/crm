@@ -10,7 +10,11 @@ const usuariosController = require('../controllers/usuariosController');
 const auth = require('../middleware/auth');
 
 module.exports = function() {
-    
+
+    router.get('/ping', (req, res) => {
+        res.send('pong!');
+      }
+    );
     // Agrega nuevos clientes via POST
     router.post('/clientes',
         clienteController.nuevoCliente 

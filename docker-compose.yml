@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+  frontend:
+      restart: always
+      container_name: frontend
+      build:
+        context: frontend
+        target: development
+      volumes:
+        - ./frontend:/usr/src/app
+        - /usr/src/app/node_modules
+      depends_on:
+        - mongo
+      networks:
+        - react-express
+      ports:
+        - "3000:3000"
+        
+  backend:
+    restart: always
+    container_name: backend
+    build:
+      context: backend
+      target: development
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
+    networks:
+      - express-mongo
+      - react-express
+    expose: 
+      - 3000
+    ports:
+      - "3001:3000"
+    
+  mongo:
+    container_name: mongo
+    restart: always
+    image: mongo:7.0.9
+    expose:
+      - 270178
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - express-mongo
+
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
+      #- clients
+      #- orders
+      #- products
+    networks:
+      - express-mongo
+      - react-express
+
+networks:
+  express-mongo:
+  react-express:
+
+volumes:
+  mongo_data:
