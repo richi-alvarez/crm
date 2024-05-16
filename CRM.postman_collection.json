@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "5f56a3c6-a217-488d-8b86-7456a469eb99",
+		"name": "CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4509599",
+		"_collection_link": "https://cloudy-crescent-251414.postman.co/workspace/epayco~34f97008-a95b-44be-a024-14ffba896f3b/collection/4509599-5f56a3c6-a217-488d-8b86-7456a469eb99?action=share&source=collection_link&creator=4509599"
+	},
+	"item": [
+		{
+			"name": "create_client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "ricardo",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "saldarriaga",
+							"type": "text"
+						},
+						{
+							"key": "empresa",
+							"value": "prueba01",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ricardo@cliente.com",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "3184210294",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_client_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/clientes/:idCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"clientes",
+						":idCliente"
+					],
+					"variable": [
+						{
+							"key": "idCliente",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/clientes/:idCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"clientes",
+						":idCliente"
+					],
+					"variable": [
+						{
+							"key": "idCliente",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload_client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "jonh",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "doe",
+							"type": "text"
+						},
+						{
+							"key": "empresa",
+							"value": "prueba01",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "prueba@prueba.com",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "000000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/clientes/:idCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"clientes",
+						":idCliente"
+					],
+					"variable": [
+						{
+							"key": "idCliente",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear-cuenta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIm5vbWJyZSI6Iml0bSIsImlkIjoiNjY0NjYxZjkzOWYwOTY4MjBhN2RiNzA5IiwiaWF0IjoxNzE1ODg4OTE2LCJleHAiOjE3MTU4OTI1MTZ9.pnwXeKSm8q4TzSx8TXafdjsOTumgsaXKH3xdN2bERug",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "2ricardo@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "ricardo s",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "2ricardo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/crear-cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"crear-cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "iniciar-sesion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"if (responseCode.code == 200) {",
+							"",
+							"    var jsonData = JSON.parse(responseBody);",
+							"",
+							"    pm.globals.set(\"token\", jsonData.token);",
+							"    postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/iniciar-sesion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"iniciar-sesion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
