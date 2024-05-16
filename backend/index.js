@@ -12,7 +12,7 @@ const app = express();
 //conectar a la mongo
 //db();
 db.connect(app);
-const port = 3000;
+const port = 3001;
 // habilitar bodyparser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
