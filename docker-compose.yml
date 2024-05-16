@@ -32,16 +32,18 @@ services:
       - express-mongo
       - react-express
     expose: 
-      - 3000
+      - 3001
     ports:
-      - "3001:3000"
+      - "3001:3001"
     
   mongo:
     container_name: mongo
     restart: always
     image: mongo:7.0.9
     expose:
-      - 270178
+      - 27017
+    ports:
+      - "27018:27017"
     volumes:
       - mongo_data:/data/db
     networks:

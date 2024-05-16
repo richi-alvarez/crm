@@ -45,7 +45,8 @@ ssh-be: ## bash into the be container
  #docker stop $(docker ps -q) ## stop container
  #docker stop $(docker ps -aq) ## stop all container
  #docker rm $(docker ps -aq) ## delete containers
- #docker rmi $(docker images -a -q) ## delete images
  #docker volume prune ## delete local volume
  #docker volume rm $(docker volume ls -q)  ## delete all volume
+ #docker rmi $(docker images -a -q) ## delete images
+
  
